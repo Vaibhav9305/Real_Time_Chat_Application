@@ -11,8 +11,8 @@ const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
     origin: [
-      "http://localhost:5173", // for local dev
-      "https://real-time-chat-git-c36e1c-vaibhav-sprojects-22b78c5b.vercel.apprivastavas-", // deployed frontend
+      "http://localhost:5173",
+      "https://real-time-chat-git-c36e1c-vaibhav-srivastavas-projects-22b78c5b.vercel.app",
     ],
     methods: ["GET", "POST"],
   },
