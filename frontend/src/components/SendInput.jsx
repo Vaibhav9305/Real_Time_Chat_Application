@@ -16,7 +16,8 @@ function SendInput() {
     try {
       const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/v1/message/send/${selectedUser?._id}`, {message}, {
         headers:{
-          'Content-Type':'application/json'
+          'Content-Type':'application/json',
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
         withCredentials: true
       });
