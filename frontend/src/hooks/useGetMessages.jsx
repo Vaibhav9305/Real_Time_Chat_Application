@@ -12,7 +12,6 @@ function useGetMessages() {
         axios.defaults.withCredentials = true;
         const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/message/${selectedUser?._id}`);
         dispatch(setMessages(res.data));
-        localStorage.setItem("token", res.data.token);
 
         console.log(res);
 
