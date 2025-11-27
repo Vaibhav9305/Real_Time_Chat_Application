@@ -17,7 +17,9 @@ const io = new Server(server, {
     credentials: true,
     methods: ["GET", "POST"],
   },
+  
 });
+app.options("*", cors());
 
 export const getReceiverSocketId = (receiverId) => {
   return userSocketMap[receiverId];
