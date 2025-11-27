@@ -18,7 +18,8 @@ function useGetOtherUsers() {
           {
             headers: {
               Authorization: `Bearer ${token}`
-            }
+            },
+            withCredentials: true,
           }
         );
 
