@@ -16,14 +16,14 @@ const PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
-const corsOption = {
+
+app.use(cors({
   origin: [
     "http://localhost:5173", // for local dev
     "https://chat-mern-khaki.vercel.app/", // deployed frontend
   ],
   credentials: true,
-};
-app.use(cors(corsOption));
+}));
 
 //routes
 app.use("/api/v1/user", userRoutes);
