@@ -14,6 +14,7 @@ const io = new Server(server, {
       "http://localhost:5173",
       "https://real-time-chat-git-c36e1c-vaibhav-srivastavas-projects-22b78c5b.vercel.app",
     ],
+    credentials: true,
     methods: ["GET", "POST"],
   },
 });
@@ -27,7 +28,7 @@ const userSocketMap = {};
 io.on("connection", (socket) => {
   console.log("User connected", socket.id);
 
-  const userId = socket.handshake.query.userId;
+  const userId = socket.handshake.auth.userId;
   if (userId !== undefined) {
     userSocketMap[userId] = socket.id;
   }

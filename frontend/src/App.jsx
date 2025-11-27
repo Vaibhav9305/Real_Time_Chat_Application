@@ -8,6 +8,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import io from 'socket.io-client';
 import { setSocket } from './redux/socketSlice';
 import { setOnlineUsers } from './redux/userSlice';
+import axios from "axios";
+axios.defaults.withCredentials = true;
 
 const router = createBrowserRouter([
   {
@@ -29,6 +31,7 @@ function App() {
   const {authUser} = useSelector(store=>store.user);
   const {socket} = useSelector(store=>store.socket);
   const dispatch = useDispatch();
+  
 
   useEffect(()=>{
     if(authUser){

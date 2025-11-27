@@ -5,7 +5,11 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setAuthUser, setOtherUsers, setSelectedUser } from "../redux/userSlice";
+import {
+  setAuthUser,
+  setOtherUsers,
+  setSelectedUser,
+} from "../redux/userSlice";
 import { setMessages } from "../redux/messageSlice";
 
 function Sidebar() {
@@ -16,7 +20,11 @@ function Sidebar() {
 
   const logoutHandler = async () => {
     try {
-      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/user/logout`);
+      const res = await axios.get(
+        `${import.meta.env.VITE_API_URL}/api/v1/user/logout`,
+        { withCredentials: true }
+      );
+
       navigate("/login");
       toast.success(res.data.message);
       dispatch(setAuthUser(null));
