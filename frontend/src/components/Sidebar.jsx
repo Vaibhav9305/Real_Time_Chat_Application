@@ -26,6 +26,11 @@ function Sidebar() {
       );
 
       navigate("/login");
+      res.clearCookie("token", {
+        httpOnly: true,
+        secure: true,
+        sameSite: "none",
+      });
       toast.success(res.data.message);
       dispatch(setAuthUser(null));
       dispatch(setMessages([]));
