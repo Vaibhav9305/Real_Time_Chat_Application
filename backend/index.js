@@ -19,7 +19,7 @@ app.use(cookieParser());
 const corsOption = {
   origin: [
     "http://localhost:5173", // for local dev
-    "https://real-time-chat-git-c36e1c-vaibhav-srivastavas-projects-22b78c5b.vercel.app", // deployed frontend
+    "https://chat-mern-khaki.vercel.app/", // deployed frontend
   ],
   credentials: true,
 };
