@@ -64,8 +64,6 @@ app.use(cors({
   credentials: true,
 }));
 
-// ✅ Preflight
-app.options("*", cors());
 
 // Middleware
 app.use(express.urlencoded({ extended: true }));
